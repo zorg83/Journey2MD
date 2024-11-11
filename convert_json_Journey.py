@@ -18,8 +18,6 @@ savefolder = r'YOUR_SAVE_FOLDER'
 
 
 for loadfile in jsonfiles:
-
-    #loadfile = r'D:\Yong\Downloads\journey-1634676654284\1578227306940-3fe2b471cbd9654d.json'
     
     # Opening JSON file
     with open(loadfile, encoding='utf-8') as json_file:
@@ -30,11 +28,11 @@ for loadfile in jsonfiles:
     
     filename = str(date) + ".md"
     if len(data.get("tags")) == 0:
-        savefile = os.path.join(savefolder, "QZ", filename)
-    elif  str(data.get("tags")[0]) == 'cy':
-        savefile = os.path.join(savefolder, "CY", filename)
+        savefile = os.path.join(savefolder, "No_Tag", filename)
+    elif  str(data.get("tags")[0]) == 'tag':
+        savefile = os.path.join(savefolder, "tag", filename)
     else:
-        savefile = os.path.join(savefolder, "QZ", filename)
+        savefile = os.path.join(savefolder, "Others", filename)
     
 
     with open(savefile, 'a+', encoding="utf-8") as f:
